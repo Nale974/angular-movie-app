@@ -1,5 +1,5 @@
 <div class="card">
-  <a href="details.html">
+  <a [routerLink]="['/details', movie.id]">
     <img [src]="movie.poster_path" [alt]="movie.title" />
     <p>{{ movie.title }}</p>
   </a>
