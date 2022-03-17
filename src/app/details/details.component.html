@@ -1,28 +1,27 @@
 <div id="center" class="main center">
 
-    <div class="container">
+  <div class="container">
 
-      <!-- Début partie spécifique home page -->
-      <div class="row" *ngIf="movie">
-        <div class="col-xs-12 col-sm-4">
-          <img class="details-img" [src]="movie.poster_path" [alt]="movie.title" />
-        </div>
-        <div class="col-xs-12 col-sm-8">
-          <h2>{{ movie.title }}</h2>
-          <h3>The Multiverse unleashed.</h3>
-          <p class="meta-wrap">
-            <span class="rating">rating: 8.3</span>
-            <span class="meta">English / 148 min. / 2021</span>
-          </p>
-
-          <ul class="genres">
-            <li>Action</li>
-            <li>Adventure</li>
-            <li>Science-Fiction</li>
-          </ul>
+    <!-- Début partie spécifique home page -->
+    <div class="row" *ngIf="movie">
+      <div class="col-xs-12 col-sm-4">
+        <img class="details-img" [src]="movie.poster_path" [alt]="movie.title" />
       </div>
-      <!-- Fin partie spécifique home page -->
+      <div class="col-xs-12 col-sm-8">
+        <h2>{{ movie.title }}</h2>
+        <h3>{{ movie.overview }}</h3>
+        <p class="meta-wrap">
+          <span class="rating">rating: {{ movie.vote_average }} </span>
+          <span class="meta">{{movie.original_language}} / {{ movie.runtime }} min. / {{ movie.release_date }}</span>
+        </p>
 
+        <ul class="genres" >
+          <li *ngFor="let genre of movie.genres">{{genre.name}}</li>
+        </ul>
+      </div>
     </div>
+    <!-- Fin partie spécifique home page -->
 
   </div>
+
+</div>

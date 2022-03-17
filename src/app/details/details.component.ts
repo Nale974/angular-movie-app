@@ -11,10 +11,9 @@ import { MovieService } from './../movie.service';
 })
 export class DetailsComponent implements OnInit {
   movie?: Movie;
+  acronymForLanguage: {[key: string]:string} = {"en":"English","fr":"French","ja":"Japanese"};
 
-  constructor(private route: ActivatedRoute, private movieService: MovieService) { 
-    // const id = Number(this.route.snapshot.paramMap.get('id'));
-    // this.movie = movieService.getMovie(id);
+  constructor(private route: ActivatedRoute, private movieService: MovieService) {
   }
 
   ngOnInit(): void {
@@ -22,6 +21,8 @@ export class DetailsComponent implements OnInit {
     this.movieService.getMovie(id).subscribe({
       next: (movie: Movie) => {
         this.movie = movie;
+        this.movie.original_language = this.acronymForLanguage[this.movie.original_language] ?
+        this.acronymForLanguage[this.movie.original_language] : this.movie.original_language;
       },
       error: (error: string) => {
         // TODO: ajouter un attribut error et lui assigner error, et l'afficher

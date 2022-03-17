@@ -29,15 +29,29 @@
   }
 }
 .sidebarMenuInner{
+    width: 100%;
     max-height: calc(100% - 90px);
-    overflow-y: scroll;
     padding:0;
-    border-top: 1px solid rgba(255, 255, 255, 0.10);
+    overflow-y: auto;
+    text-align: center;
+    border: 0;
 }
+.sidebarMenuInner:focus-visible{
+    border: 0 !important;
+}
+.sidebarMenuInner option{
+    list-style: none;
+    font-weight: bold;
+    padding: 15px 20px;
+    cursor: pointer;
+    color: #444;
+    cursor: pointer;
+    text-decoration: none;
+}
+/* */
 .sidebarMenuInner li{
     list-style: none;
     color: #fff;
-    /* text-transform: uppercase; */
     font-weight: bold;
     padding: 15px 20px;
     cursor: pointer;
@@ -54,6 +68,7 @@
     cursor: pointer;
     text-decoration: none;
 }
+/** */
 input[type="checkbox"]:checked ~ #sidebarMenu {
     transform: translateX(0);
 }
