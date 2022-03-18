@@ -48,3 +48,4 @@ Thumbs.db
 # Personal Files 
 TODO.md
 src/assets/movies-app-html-template-master/*
+src/app/movies.ts
