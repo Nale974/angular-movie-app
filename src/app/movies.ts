@@ -24,7 +24,7 @@ export const MOVIES: Movie[] = [
     // ],
     "title": "Spider-Man: No Way Home",
     "vote_average": 8.3,
-    // "comments": []
+    "comments": []
   },
   /* {
     "id": 568124,

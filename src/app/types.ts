@@ -9,9 +9,18 @@ export class Movie {
     genres!: Array<{id: number, name: string}>;
     genre_ids!:number[];
     original_language!: string;
+    comments!: Comment[];
   }
 
-  export class Genre {
-    id!: number;
-    name!: string;
-  }
+export class Genre {
+  id!: number;
+  name!: string;
+}
+
+export class Comment{
+  id!: number;
+  movieId!: number;
+  text!: string;
+  rating!: number;
+  date!: string;
+}
