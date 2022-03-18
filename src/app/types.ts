@@ -7,5 +7,11 @@ export class Movie {
     runtime!: number;
     release_date!: string;
     genres!: Array<{id: number, name: string}>;
+    genre_ids!:number[];
     original_language!: string;
+  }
+
+  export class Genre {
+    id!: number;
+    name!: string;
   }

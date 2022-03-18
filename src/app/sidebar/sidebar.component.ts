@@ -1,4 +1,6 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { GenreService } from './../genre.service';
+import { Genre } from '../types';
 
 @Component({
   selector: 'app-sidebar',
@@ -7,16 +9,23 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
 
-  // @Output() postUpdatedEvent = new EventEmitter<Post>();
+  @Output() postSelectedGenre = new EventEmitter<Genre>();
+  
+  genres:Genre[] = [];
 
-  constructor() { }
+  genreDefault:Genre = {"id":-1,"name":"Tous les genres"};
+
+  constructor(private genreService: GenreService) { }
 
   ngOnInit(): void {
+    this.genreService.getAllGenres()
+      .subscribe(genres => {
+        this.genres = genres;
+      });
   }
 
-  genreFilter(event: any){
-    // this.postUpdatedEvent.emit(updatedPost);
-    console.log(event)
+  selectGenreFilm(selectedGenre: Genre){
+    this.postSelectedGenre.emit(selectedGenre);
   }
 
 }

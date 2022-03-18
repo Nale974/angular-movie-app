@@ -29,26 +29,11 @@
   }
 }
 .sidebarMenuInner{
-    width: 100%;
     max-height: calc(100% - 90px);
-    padding:0;
     overflow-y: auto;
-    text-align: center;
-    border: 0;
+    padding:0;
+    border-top: 1px solid rgba(255, 255, 255, 0.10);
 }
-.sidebarMenuInner:focus-visible{
-    border: 0 !important;
-}
-.sidebarMenuInner option{
-    list-style: none;
-    font-weight: bold;
-    padding: 15px 20px;
-    cursor: pointer;
-    color: #444;
-    cursor: pointer;
-    text-decoration: none;
-}
-/* */
 .sidebarMenuInner li{
     list-style: none;
     color: #fff;
@@ -62,13 +47,13 @@
     font-size: 14px;
     color: rgba(255, 255, 255, 0.50);
 }
-.sidebarMenuInner li a{
+.sidebarMenuInner li button{
+    all: unset;
     color: #444;
     font-weight: bold;
     cursor: pointer;
     text-decoration: none;
 }
-/** */
 input[type="checkbox"]:checked ~ #sidebarMenu {
     transform: translateX(0);
 }

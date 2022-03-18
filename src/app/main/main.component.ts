@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Movie } from '../types';
-import { MOVIES } from './../movies';
+
+import { Genre, Movie } from '../types';
 import { MovieService } from './../movie.service';
 
 @Component({
@@ -12,14 +12,22 @@ export class MainComponent implements OnInit {
 
   movies:Movie[] = [];
 
-  constructor(private movieService :MovieService) {}
+  selectedGenre: Genre = {
+    "id": -1,
+    "name": "Tous les genres"
+  };
+
+  constructor(private movieService: MovieService) {}
 
   ngOnInit(): void {
     this.movieService.getAllMovies()
       .subscribe(movies => {
         this.movies = movies;
-        // console.log(movies)
       });
+  }
+
+  filterGenres(selectedGenre: Genre){
+      this.selectedGenre = selectedGenre;
   }
 
 }

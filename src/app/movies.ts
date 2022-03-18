@@ -7,6 +7,11 @@ export const MOVIES: Movie[] = [
       { "id": 12, "name": "Adventure" },
       { "id": 878, "name": "Science Fiction" }
     ],
+    "genre_ids": [
+      28,
+      12,
+      878
+    ],
     "id": 634649,
     "original_language": "en",
     "overview": "Peter Parker is unmasked and no longer able to separate his normal life from the high-stakes of being a super-hero. When he asks for help from Doctor Strange the stakes become even more dangerous, forcing him to discover what it truly means to be Spider-Man.",
